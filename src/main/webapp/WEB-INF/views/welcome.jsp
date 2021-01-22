@@ -7,9 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="/login.do" method="post">
-	Name: <input name="name" type="text">
-	Password: <input type="password" name="password">
-	<input name="submit" value="submit" type="submit"></form>
+Welcome ${name } your password is ${password }
 </body>
 </html>

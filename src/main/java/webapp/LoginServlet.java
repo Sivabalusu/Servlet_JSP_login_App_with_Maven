@@ -14,8 +14,16 @@ public class LoginServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+				request.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(request, response);
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		request.setAttribute("name", request.getParameter("name"));
-		request.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(request, response);
+		request.setAttribute("password", request.getParameter("password"));
+		request.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(request, response);
+		
 	}
 
 }
