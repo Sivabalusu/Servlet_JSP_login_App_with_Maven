@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	My Servlet and JSP app
+	My Servlet-JSP application , My name is ${name}
 </body>
 </html>
