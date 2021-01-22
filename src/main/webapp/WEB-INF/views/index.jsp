@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<p><font color="red">${errMessage }</font></p>
 	<form action="/login.do" method="post">
 	Name: <input name="name" type="text">
 	Password: <input type="password" name="password">

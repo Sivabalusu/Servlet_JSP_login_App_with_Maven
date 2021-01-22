@@ -20,10 +20,19 @@ public class LoginServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.setAttribute("name", request.getParameter("name"));
-		request.setAttribute("password", request.getParameter("password"));
-		request.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(request, response);
-		
+		LoginService loginService=new LoginService();
+		String name= request.getParameter("name");
+		String password=request.getParameter("password");
+		boolean isvalidUser=loginService.validLogin(name, password);
+		if(isvalidUser) {
+			request.setAttribute("name", name);
+			request.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(request, response);
+		}
+		else {
+			request.setAttribute("errMessage", "Invalid Credentials");
+			request.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(request, response);
+		}
 	}
+	
 
 }
